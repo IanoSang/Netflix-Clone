@@ -2,5 +2,26 @@
 {% load static %}
 
 {% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 mt-5">
+            <form action="/search/" method="get" class="row g-3">
+                <select class="form-select" name="type" class="mb-3">
+                    <option value="movie">Movie</option>
+                    <option value="tv">TV Show</option>
+                </select>
 
+                <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="Search Query" name="q">
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
 {% endblock content %}
