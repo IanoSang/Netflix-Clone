@@ -1,6 +1,5 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +8,8 @@
     <title>Netflix</title>
     <link rel="stylesheet" href="{% static 'assets/style.css' %}">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="bg-black text-gray-100">
     <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
@@ -17,27 +18,21 @@
         </div>
 
         <div>
-            {% if request.user.is_authenticated %}
+
             <a href="#" class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
                 Logout
             </a>
-            {% else %}
+
             <a href="#" class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
                 Sign In
             </a>
-            {% endif %}
+
         </div>
     </nav>
     {% block content %}
 
     {% endblock content %}
-    <!-- <footer class=" px-5 py-10 ">
-        <ul class="flex justify-between items-center">
 
-            <li>&copy; All Right Reserved | 2022</li>
-            <li> Netflix Clone</li>
-            <li>By: Destiny Franks - Desphixs</li>
-        </ul>
-    </footer> -->
+
 </body>
 </html>
