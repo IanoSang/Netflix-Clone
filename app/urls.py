@@ -4,7 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.Home, name='home')
+    path('', views.Home, name='home'),
+    path("series/", views.view_series, name="series"),
+    path("movies/", views.view_movies, name="movies"),
+    path("search/", views.search, name="search"),
 ]
 
 if settings.DEBUG:
