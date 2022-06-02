@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+ <div class="container">
+    <div class="row mt-5">
+         <h2> Series </h2>
+        {% for m in recommendations.results %}
+             <div class="col-md-6">
+                    <div class="col-md-6 my-2">
+                        <img height="300" width="400" src = 'https://image.tmdb.org/t/p/w200{{ m.poster_path }}'>
+                    </div>
+                    <div class="col-md-6">
+                         {% if not m.name %}
+                        <h5><b>Title: </b> {{ m.title }}</h5>
+                         {% else %}
+                        <h5><b>Name: </b> {{ m.name }}</h5>
+                        {% endif %}
+                        <p>{{ m.overview }}</p>
+
+                        <a href="/{{ type }}/{{ m.id }}/" class="btn btn-dark my-3">View Details</a>
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+ </div>
+{% endblock %}
